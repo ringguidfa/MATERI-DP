@@ -1,5 +1,6 @@
 package com.chirikualii.materidb.ui.home.nowPlaying
 
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -22,7 +23,7 @@ class NowPlayingFragment : Fragment() {
     private lateinit var adapter: MovieListAdapter
 
     private val mViewModel: NowPlayingViewModel by viewModels(
-        factoryProducer = { NowPlayingViewModelFactory() }
+        factoryProducer = { NowPlayingViewModelFactory(requireActivity().applicationContext) }
     )
 
     override fun onCreateView(
